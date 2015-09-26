@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <link rel="stylesheet" href="css/index.css"/>
+        <link rel="stylesheet" href="themes/busmap.css" />
+        <link rel="stylesheet" href="themes/jquery.mobile.icons-1.4.5.min.css" />
+        <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" /> 
+        <style type="text/css">
+          
+        </style>
+        <script src="js/jquery-1.11.3.min.js"></script> 
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="js/parse.min.js"></script>
+        <title>Bus City</title>
+    </head>
+<body onload="onLoad()">
+<div class="listening">
+</div>
+<div class="received">
+<div data-role="page" id="homePage">
+    <header data-role="header"> 
+        <h1 class="ui-title" role="heading">BusMaps</h1>
+        <div class="ui-btn-left" data-role="controlgroup" data-type="horizontal">
+         <a href="#menulist" data-role="button" data-icon="bullets">Menu</a>
+        </div>
+    </header>
+    <div id="control"><input id="pac-input" type="search" placeholder="Tìm kiếm"/></div>
+        <div id="map"></div>
+
+
+    <div id="box-input-info-search">
+        <form id="form-search-box">
+            <div class="line-control">
+                <div class="label">Điểm bắt đầu: </div>
+                <input type="search" id="input-start-place" placeholder="Điểm bắt đầu">
+            </div>
+            <div class="line-control">
+                <div class="label">Điểm đến: </div>
+                <input type="search" id="input-end-place" placeholder="Điểm đến">
+            </div>
+            <div class="line-control">
+                <button type="submit" id="btn-search-box" class="submit button">Tìm</button>
+                <a data-role="button" id="closesearch">Đóng</a>
+            </div>
+        </form>
+    </div>
+
+    <!--Menu list-->
+    <div data-role="panel" id="menulist" data-position="left" data-display="overlay">
+        <ul data-role="listview">
+          <li action="close"><a href="#" data-rel="close">Đóng</a></li>
+          <li data-role="list-divider">Map</li>
+          <li action="mylocation" id="mylocation" data-rel="close"><a>Vị trí của bạn</a></li>
+          <li action="gotoGoogle"><a href="pages/search.html" data-transition="slide">Tra cứu</a></li>
+          <li action="find"><a href="#popupCloseRight" data-rel="popup" id="findstreet">Tìm đường</a></li>
+          <!--<li action="gotoGoogle"><a data-transition="slide" id="linkdt">Dữ liệu</a></li>-->
+          <li action="exit" id="exitFromApp"><a>Thoát</a></li>
+        </ul>
+    </div><!-- /menu panel -->
+</div>
+</div>
+<!--endfoot-->
+</body>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="statusbar.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script charset="utf-8" async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqIvgjtcyXtE0xpo-gHroLvhbdAYSNOOM&callback=initMap&sensor=false&libraries=places,geometry">
+        </script>
+</html>

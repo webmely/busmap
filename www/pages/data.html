@@ -1,0 +1,63 @@
+<div data-role="page" id="dataPage">
+  <div data-role="header" data-theme="a">
+      <a href="index.html" data-icon="back" data-rel="back" data-iconpos="notext" class="ui-btn-left jqm-home">Home</a><h1>Data</h1>
+    </div><!-- /header -->
+  <div role="main" class="ui-content">
+      <div data-role="nottabs" id="tabs">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#one" data-ajax="false" class="ui-btn-active">Cities</a></li>
+          <li><a href="#two" data-ajax="false">Bus_lines</a></li>
+          <li><a href="#three" data-ajax="false">Bus_stations</a></li>
+        </ul>
+      </div>
+      <div class="notice"></div>
+      <div id="one" class="ui-body-d ui-content">
+        <form id="cities">
+          <label for="tel">City Name:</label>
+          <input type="text" id="city_name" placeholder="City Name">
+          <button type="submit">Add</button>
+        </form>
+        <hr/>
+        <ul id="show1" data-split-icon="delete">
+        </ul>
+      </div>
+      <div id="two">
+        <form id="buslines">
+          <label for="tel">Busline Name:</label>
+          <input type="text" id="busline_name" placeholder="Busline Name">
+          <label for="tel">Busline Code:</label>
+          <input type="text" id="busline_code" placeholder="Busline Code">
+          <label for="tel">Busline Detail:</label>
+          <textarea id="busline_detail" placeholder="Busline Detail"></textarea>
+          <label for="tel">City:</label>
+          <select id="city_id">
+          </select>
+          <button type="submit">Add</button>
+        </form>
+      </div>
+      <div id="three">
+        <form id="busstation">
+          <label for="tel">Busstation Name:</label>
+          <input type="text" id="busstation_name" placeholder="Busstation Name">
+          <label for="tel">Latitude:</label>
+          <input type="text" id="lat" placeholder="Latitude">
+          <label for="tel">Longitude:</label>
+          <input type="text" id="long" placeholder="Longitude">
+          <label for="tel">Lượt:</label>
+          <select id="type">
+            <option value="0">Lượt đi</option>
+            <option value="1">Lượt về</option>
+          </select>
+          <label for="tel">BusLine:</label>
+          <select id="line_id">
+          </select>
+          <button type="submit">Add</button>
+        </form>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
